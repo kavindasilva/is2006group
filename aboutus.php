@@ -1,5 +1,5 @@
 <?php 
-//session maintainence
+//session maintainence code
 ?>
 
 <!DOCTYPE HTML>
