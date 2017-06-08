@@ -12,7 +12,7 @@ if($conn->connect_error){
 	die("<p>Connection failed: " . $conn -> connect_error . "</p>");
 }
 else{
-	echo "connected to " . $dataBase . "<hr/>";
+	//echo "connected to " . $dataBase . "<hr/>";
 }
 
 ?>
