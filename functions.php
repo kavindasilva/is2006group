@@ -7,4 +7,8 @@ function s1(){
 
 
 
+function exeQuery(){
+	
+}
+
 ?>
