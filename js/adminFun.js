@@ -24,3 +24,20 @@ function searchRows(trindex, eleid, tableid) { //tr index, element id
     }
   }
 }
+
+
+function clearAllStd(){
+	document.getElementById("search1").value="";
+	document.getElementById("search2").value="";
+	document.getElementById("search3").value="";
+	
+	searchRows(0, 'search1' ,'tblstd');
+}
+
+function clearAllTch(){
+	document.getElementById("search11").value="";
+	document.getElementById("search12").value="";
+	document.getElementById("search13").value="";
+	
+	searchRows(0, 'search11' ,'tbltch');
+}

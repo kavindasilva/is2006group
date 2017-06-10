@@ -80,7 +80,7 @@ function viewTeachers() {
 		echo "<p>No teachers in the table</p>";
 	
 	else {
-		echo "<table >";
+		echo "<table id='tbltch'>";
 		echo "<tr><th>First name</th> <th>Last name</th> <th>Telephone</th> </tr>";
 		while ($row = mysqli_fetch_array($res)) {
 			echo "<form method='post' action='funs1.php'>";
