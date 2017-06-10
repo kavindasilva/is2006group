@@ -51,7 +51,10 @@ include 'funs1.php';
 				<form action="funs1.php" method="post">
 					Filter teachers by keyword:
 					<input type="button" onclick="clearAllTch()" value="clear search"/>
+					
+					<a href="addNew.php?actor=tch"><input value="Add New Teacher" type="button"></a>
 					<br>
+					
 					<input type="text" name="skey" id="search11" onkeyup="searchRows(0,this.id, 'tbltch');" placeholder="first name" />
 					<input type="text" name="skey" id="search12" onkeyup="searchRows(1,this.id, 'tbltch');" placeholder="last name" />
 					<input type="text" name="skey" id="search13" onkeyup="searchRows(2,this.id, 'tbltch');" placeholder="telephone" />

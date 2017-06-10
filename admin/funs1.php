@@ -39,7 +39,16 @@ if(isset($_POST['delete'])){
 	elseif($_POST['actor']=="tt")
 		$sql1="delete from teacher where tid=".$_POST['tid'];
 	
-	echo "$sql1";
+	//echo "$sql1";
+	
+	if(mysqli_query($GLOBALS['conn'], $sql1)){
+		echo "Record deleted successfully";
+		//delete student and redirect to main page
+		echo "<script type='text/javascript'>";
+		echo "alert('Student deleted succesfully.');";
+		echo "window.location.href = 'index.php';";
+		echo "</script>";
+	}
 	
 }
 
@@ -56,6 +65,7 @@ function viewStudents() {
 		echo "<tr><th>First name</th> <th>Last name</th> <th>Home town</th> </tr>";
 		while ($row = mysqli_fetch_array($res)) {
 			echo "<form method='post' action='funs1.php'>";
+			//echo "<form method='post' action='funs1.php' onsubmit='confirmD();'>";
 			//echo "<form method='post' action=''>"; //auto refreshing
 			
 			echo "<tr><input type='text' name='sid' value='" . $row['sid'] . "' hidden/>"; //make teacher
@@ -65,7 +75,7 @@ function viewStudents() {
 			echo "<td>" . $row['lname'] . "</td>";
 			echo "<td>" . $row['homet'] . "</td>";
 			echo "<td><input type='submit' name='view' value='Update'/></td>";
-			echo "<td><input type='submit' name='delete' value='DELETE' style='color:red'/></td></tr></form>";	
+			echo "<td><input type='submit' name='delete' onclick='return confirmD()' value='DELETE' style='color:red'/></td></tr></form>";	
 		}
 		echo "</table>";
 	}
