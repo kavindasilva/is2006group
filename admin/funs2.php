@@ -33,7 +33,7 @@ if (isset($_POST['studentadd'])) {
 if (isset($_POST['teacheradd'])) {
 	$ttt = $_POST['addr'];
 	$sqlq = "insert into teacher values(null,'" . $_POST['fname'] . "','" . $_POST['lname'] . "', '$ttt' );";
-	echo $sqlq;
+	//echo $sqlq;
 
 	if (mysqli_query($GLOBALS['conn'], $sqlq)) {
 		$sql2 = "select max(tid) as mxx from teacher";

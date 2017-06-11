@@ -42,6 +42,20 @@ function confirmD() {
 		return false;
 }
 
+function confirmU() {
+	var x = confirm("Do you really want to update?");
+	if (x)
+		return true;
+	else
+		return false;
+}
+
+function redirectMain(){
+	//window.open('index.php');
+	//window.location.href("index.php");
+	window.location="index.php";
+}
+
 function clearAllStd() {
 	document.getElementById("search1").value = "";
 	document.getElementById("search2").value = "";

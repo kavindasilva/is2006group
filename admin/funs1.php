@@ -3,36 +3,19 @@
 require "../dbcon.php";
 //global $conn;
 
-//search
-if(isset($_POST['usearch'])){
-	echo $_POST['skey']."<br>"; echo $_POST['stype'];
-	if($_POST['stype']=="ss")
-		search("std", $_POST['skey']);
-	elseif($_POST['stype']=="tt")
-		search("tch", $_POST['skey']);
-}
-
-//search function
-function search($tbl, $kword){
-	if($tbl=="std")
-		$sqlq="select * from student where lname='".$kword."' or fname='".$kword."' or sid='".$kword."';";
-	if($tbl=="tch")
-		$sqlq="select * from teacher where lname='".$kword."' or fname='".$kword."' or tid='".$kword."';";
-	
-	echo $sqlq;
-	
-	/*
-	$res=mysqli_query($GLOBALS['conn'], $sqlq);
-	if($res)
-		echo "success";
-	else {
-		echo "error deleting rec";
-	}*/
+//update
+if(isset($_POST['update'])){
+	require_once 'funs3.php'; //update function
+	//header('Location: funs3.php'); //update
+	if($_POST['actor']=="ss")
+		updateStd($_POST['sid']);
+	elseif($_POST['actor']=="tt")
+		updateTch($_POST['tid']);
 }
 
 //delete
 if(isset($_POST['delete'])){
-	echo "del called<br>";//echo $_POST['sid']."<br>";echo $_POST['tid']."<br>";echo $_POST['actor']."<BR>";
+	//echo "del called<br>";//echo $_POST['sid']."<br>";echo $_POST['tid']."<br>";echo $_POST['actor']."<BR>";
 	
 	if($_POST['actor']=="ss")
 		$sql1="delete from student where sid=".$_POST['sid']."";
@@ -45,7 +28,7 @@ if(isset($_POST['delete'])){
 		echo "Record deleted successfully";
 		//delete student and redirect to main page
 		echo "<script type='text/javascript'>";
-		echo "alert('Student deleted succesfully.');";
+		echo "alert('Record deleted succesfully.');";
 		echo "window.location.href = 'index.php';";
 		echo "</script>";
 	}
@@ -74,7 +57,7 @@ function viewStudents() {
 			echo "<td>" . $row['fname'] . "</td>";
 			echo "<td>" . $row['lname'] . "</td>";
 			echo "<td>" . $row['homet'] . "</td>";
-			echo "<td><input type='submit' name='view' value='Update'/></td>";
+			echo "<td><input type='submit' name='update' onclick='return confirmU()' value='Update'/></td>";
 			echo "<td><input type='submit' name='delete' onclick='return confirmD()' value='DELETE' style='color:red'/></td></tr></form>";	
 		}
 		echo "</table>";
@@ -102,8 +85,8 @@ function viewTeachers() {
 			echo "<td>" . $row['fname'] . "</td>";
 			echo "<td>" . $row['lname'] . "</td>";
 			echo "<td>" . $row['telno'] . "</td>";
-			echo "<td><input type='submit' name='view' value='Update'/></td>";
-			echo "<td><input type='submit' name='delete' value='DELETE' style='color:red'/></td></tr></form>";	
+			echo "<td><input type='submit' name='update' onclick='return confirmU()' value='Update'/></td>";
+			echo "<td><input type='submit' name='delete' onclick='return confirmD()' value='DELETE' style='color:red'/></td></tr></form>";	
 		}
 		echo "</table>";
 	}
