@@ -1,12 +1,18 @@
 <?php
 //session maintainence // kavindasilva
-/*
+/**/
  if(!isset($_SESSION['user'])){
- echo "user not set";
- header('Location:../login.html');
- }*/
+	echo "user not set";
+	//header('Location:../login.html');
+ }
+ elseif ($_SESSION['utype']!="adm") {
+     echo "not an admin";
+	 //header('Location:../login.html');
+ }
 
-include 'funs1.php';
+/**/
+
+include_once 'funs1.php';
 ?>
 
 <!DOCTYPE html>
@@ -18,6 +24,14 @@ include 'funs1.php';
 	</head>
 
 	<body>
+		<!--the top navi bar-->
+		<div>
+			<?php
+			include_once '../static/head1.php';			
+			?>
+		</div>
+		
+		<!--page body-->
 		<div>
 			<!--students list-->
 			<P>
