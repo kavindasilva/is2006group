@@ -1,4 +1,5 @@
 <?php
+//this file has functions only
 
 require "../dbcon.php";
 //global $conn;

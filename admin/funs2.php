@@ -1,6 +1,7 @@
 <?php
+//this file contains functions only
 
-require '../dbcon.php';
+require_once '../dbcon.php';
 
 if (isset($_POST['studentadd'])) {
 	$ttt = $_POST['addr'];
