@@ -42,10 +42,10 @@ include_once 'funs1.php';
 					<a href="addNew.php?actor=std"><input value="Add New Student" type="button"></a>
 					
 					<br>
-					<input type="text" name="skey" id="search11" onkeyup="searchRows(2,this.id, 'tblstd');" placeholder="first name" />
-					<input type="text" name="skey" id="search12" onkeyup="searchRows(3,this.id, 'tblstd');" placeholder="last name" />
-					<input type="text" name="skey" id="search13" onkeyup="searchRows(5,this.id, 'tblstd');" placeholder="class" />
-					<input type="text" name="skey" id="search14" onkeyup="searchRows(9,this.id, 'tblstd');" placeholder="address" />
+					<input type="text" name="skey" id="search1" onkeyup="searchRows(2,this.id, 'tblstd');" placeholder="first name" />
+					<input type="text" name="skey" id="search2" onkeyup="searchRows(3,this.id, 'tblstd');" placeholder="last name" />
+					<input type="text" name="skey" id="search3" onkeyup="searchRows(5,this.id, 'tblstd');" placeholder="class" />
+					<input type="text" name="skey" id="search4" onkeyup="searchRows(9,this.id, 'tblstd');" placeholder="address" />
 
 					<input type="text" name="stype" value="ss" hidden />
 					<input type="submit" name="usearch" value="search" hidden/>
@@ -72,8 +72,8 @@ include_once 'funs1.php';
 					
 					<input type="text" name="skey" id="search11" onkeyup="searchRows(1,this.id, 'tbltch');" placeholder="first name" />
 					<input type="text" name="skey" id="search12" onkeyup="searchRows(2,this.id, 'tbltch');" placeholder="last name" />
-					<input type="text" name="skey" id="search13" onkeyup="searchRows(4,this.id, 'tbltch');" placeholder="NIC" />
-					<input type="text" name="skey" id="search13" onkeyup="searchRows(9,this.id, 'tbltch');" placeholder="telephone" />
+					<input type="text" name="skey" id="search13" onkeyup="searchRows(3,this.id, 'tbltch');" placeholder="telephone" />
+					<input type="text" name="skey" id="search14" onkeyup="searchRows(4,this.id, 'tbltch');" placeholder="NIC" />
 
 					<input type="text" name="skey" hidden/>
 					<input type="text" name="stype" value="tt" hidden />

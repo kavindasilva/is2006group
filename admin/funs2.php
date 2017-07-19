@@ -1,6 +1,8 @@
 <?php
-//this file contains functions only
-
+/**this file contains functions only
+insert student
+insert teacher
+*/
 require_once '../dbcon.php';
 
 if (isset($_POST['studentadd'])) {
@@ -41,8 +43,13 @@ if (isset($_POST['studentadd'])) {
 }
 
 if (isset($_POST['teacheradd'])) {
-	$ttt = $_POST['addr'];
-	$sqlq = "insert into teacher values(null,'" . $_POST['fname'] . "','" . $_POST['lname'] . "', '$ttt' );";
+	$fname=$_POST['fname'];
+	$lname=$_POST['lname'];
+	$addr=$_POST['addr'];
+	$tel=$_POST['tp'];
+	$nic=$_POST['nic'];
+	
+	$sqlq = "insert into teacher values(null, '$nic', '$fname', '$lname', '$addr', '$tel');";
 	//echo $sqlq;
 
 	if (mysqli_query($GLOBALS['conn'], $sqlq)) {

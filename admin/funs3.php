@@ -1,5 +1,9 @@
 <?php
-//this file contains functions only. JS is included but not executed
+/**
+this file contains functions only. JS is included but not executed
+update student
+update teacher
+*/
 require_once '../dbcon.php';
 echo "<script type='text/javascript' src='../js/adminFun.js'></script>";
 

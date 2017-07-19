@@ -85,7 +85,7 @@ function viewTeachers() {
 	
 	else {
 		echo "<table id='tbltch'>";
-		echo "<tr><th>First name</th> <th>Last name</th> <th>Telephone</th> </tr>";
+		echo "<tr> <TH>ID</th> <th>First name</th> <th>Last name</th> <th>Telephone</th> <th>NIC no</th></tr>";
 		while ($row = mysqli_fetch_array($res)) {
 			echo "<form method='post' action='funs1.php'>";
 			//echo "<form method='post' action=''>"; //auto refreshing
@@ -93,9 +93,12 @@ function viewTeachers() {
 			echo "<tr><input type='text' name='tid' value='" . $row['tid'] . "' hidden/>"; //make teacher
 			echo "<input type='text' name='actor' value='tt' hidden/>"; //set as teacher
 			
+			echo "<td>" . $row['tid'] . "</td>";
 			echo "<td>" . $row['fname'] . "</td>";
 			echo "<td>" . $row['lname'] . "</td>";
 			echo "<td>" . $row['telno'] . "</td>";
+			echo "<td>" . $row['nic'] . "</td>";
+			
 			echo "<td><input type='submit' name='update' onclick='return confirmU()' value='Update'/></td>";
 			echo "<td><input type='submit' name='delete' onclick='return confirmD()' value='DELETE' style='color:red'/></td></tr></form>";	
 		}
