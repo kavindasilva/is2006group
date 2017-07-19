@@ -4,12 +4,21 @@
 require_once '../dbcon.php';
 
 if (isset($_POST['studentadd'])) {
-	$ttt = $_POST['addr'];
+	$fname=$_POST['fname'];
+	$lname=$_POST['lname'];
+	$cls=$_POST['cls'];
+	$dob=$_POST['dob'];
+	$addr=$_POST['addr'];
+	$t1=$_POST['tp'];
+	$t2=$_POST['tp2'];
+	$gend=$_POST['gend'];
+	$pht= 10;//$_POST['stphoto'];
 	//$sqlq="insert into student values(null,'".$_POST['fname']."','".$_POST['lname']."', '".$ttt."' );";
-	$sqlq = "insert into student values(null,'" . $_POST['fname'] . "','" . $_POST['lname'] . "', '$ttt' );";
+	
+	$sqlq = "insert into student values(null, '$fname', '$lname', '$cls', '$dob', '$addr', '$t1', '$t2', '$gend', $pht);";
 	echo $sqlq;
 
-	if (mysqli_query($GLOBALS['conn'], $sqlq)) {
+	if (mysqli_query($GLOBALS['conn'], $sqlq)) { //after suxxesful execution of query
 		$sql2 = "select max(sid) as mxx from student";
 		//get the new student id
 		$res = mysqli_query($GLOBALS['conn'], $sql2);

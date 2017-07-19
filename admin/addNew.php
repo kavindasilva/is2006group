@@ -42,12 +42,9 @@
 						<td>Address: </td><td><textarea name="addr"></textarea></td>
 					</tr>
 					<tr>
-						<td>Birthday: </td><td><input type="date" name="dob"></td>
+						<td>Telephone </td><td><input type="tel" name="tp"></td>
 					</tr>
-
-					<tr>
-						<td>tp </td><td><input type="tel" name="tp"></td>
-					</tr>
+					
 
 					<tr><td></td><td></td></tr>
 					<?php
@@ -67,14 +64,21 @@
 
 //display things unique to student
 function formStd() {
-	echo "<tr><td>Parent phone:</td> <td><input type='tel' ></td> </tr>";
+	echo "<tr><td>Telephone2:</td> <td><input type='tel' name='tp2'></td> </tr>";
+	echo "<tr><td>Birth day:</td> <td><input type='date' name='dob'></td> </tr>";
+	echo "<tr><td>Gender:</td> <td><input type='radio' name='gend' value='male'>Male <input type='radio' name='gend' value='female'>Female</td> </tr>";
+	echo "<tr><td>Class:</td> <td><input type='text' name='cls'></td> </tr>";
+	echo "<tr><td>Photo:</td> <td><input type='file' name='stphoto'></td> </tr>";
+	
 	echo "<tr><td><input type='submit' value='Add Student' name='studentadd'></td> <td></td> </tr>";
 
 }
 
 //display things unique to teacher
 function formTch() {
-	echo "<tr><td>Phone No.:</td> <td><input type='tel' ></td> </tr>";
+	echo "<tr><td>NIC no :</td> <td><input type='text' name='nic' size=9></td> </tr>";
+	//echo "<tr><td>Qualifications:</td> <td><input type='tel' ></td> </tr>";
+	
 	echo "<tr><td><input type='submit' value='Add Teacher' name='teacheradd'></td> <td></td> </tr>";
 }
 ?>

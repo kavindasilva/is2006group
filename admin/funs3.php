@@ -4,8 +4,11 @@ require_once '../dbcon.php';
 echo "<script type='text/javascript' src='../js/adminFun.js'></script>";
 
 if(isset($_POST['updatestd'])){
-	$newfname=$_POST['fname']; $newlname=$_POST['lname']; $newHT=$_POST['homet'];
-	$sqlq="update student set fname='$newfname', lname='$newlname', homet='$newHT' where sid=".$_POST['usid'];
+	$newfname=$_POST['fname']; $newlname=$_POST['lname']; $newclass=$_POST['cls'];
+	$newtp1=$_POST['tp1']; $newtp2=$_POST['tp2']; $newadd=$_POST['addr'];
+	
+	$sqlq="update student set fname='$newfname', lname='$newlname', class='$newclass', 
+	tel1='$newtp1', tel2='$newtp2', address='$newadd' where sid=".$_POST['usid'];
 	
 	if(mysqli_query($GLOBALS['conn'], $sqlq)){
 		echo "<script type='text/javascript'>";
@@ -46,10 +49,14 @@ function updateStd($stdid){
 			
 			echo "<tr><td>First Name</td> <td><input type='text' name='fname' value='" . $row['fname'] . "'></td></tr>";
 			echo "<tr><td>Last Name</td> <td><input type='text' name='lname' value='" . $row['lname'] . "'></td></tr>";
-			echo "<tr><td>Home Town</td> <td><input type='text' name='homet' value='" . $row['homet'] . "'></td></tr>";
+			echo "<tr><td>Class</td> <td><input type='text' name='cls' value='" . $row['class'] . "'></td></tr>";
+			echo "<tr><td>Telephone1</td> <td><input type='text' name='tp1' value='" . $row['tel1'] . "'></td></tr>";
+			echo "<tr><td>Telephone2</td> <td><input type='text' name='tp2' value='" . $row['tel2'] . "'></td></tr>";
+			echo "<tr><td>Address</td> <td><input type='text' name='addr' value='" . $row['address'] . "'></td></tr>";
 			
 		}
 		echo "</table>";
+		
 		echo "<td><input type='submit' name='updatestd' onclick='return confirmU()' value='UPDATE' style='color:red'/></td>";
 		echo "<td><input type='button' name='cancel' onclick='redirectMain();' value='Cancel'/></td></tr></form>";	
 	}
