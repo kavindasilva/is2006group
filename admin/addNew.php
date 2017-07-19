@@ -65,12 +65,14 @@
 <?php
 //echo $_GET['actor'];
 
+//display things unique to student
 function formStd() {
 	echo "<tr><td>Parent phone:</td> <td><input type='tel' ></td> </tr>";
 	echo "<tr><td><input type='submit' value='Add Student' name='studentadd'></td> <td></td> </tr>";
 
 }
 
+//display things unique to teacher
 function formTch() {
 	echo "<tr><td>Phone No.:</td> <td><input type='tel' ></td> </tr>";
 	echo "<tr><td><input type='submit' value='Add Teacher' name='teacheradd'></td> <td></td> </tr>";

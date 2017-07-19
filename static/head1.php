@@ -11,7 +11,7 @@
 </html-->
 
 <hr color="blue">
-<ul>
+<ul style="background-color: #9945ed;">
 	<li>item1</li>
 	<li>item2</li>
 </ul>
