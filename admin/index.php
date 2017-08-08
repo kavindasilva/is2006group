@@ -39,6 +39,7 @@ include_once 'funs1.php';
 					Filter students by keyword:
 					<input type="button" onclick="clearAllStd()" value="clear search"/>
 					
+					<!--tharikage student form ekata link karanna oni-->
 					<a href="addNew.php?actor=std"><input value="Add New Student" type="button"></a>
 					
 					<br>
@@ -67,6 +68,7 @@ include_once 'funs1.php';
 					Filter teachers by keyword:
 					<input type="button" onclick="clearAllTch()" value="clear search"/>
 					
+					<!--tharikage teacher form ekata link karanna oni-->
 					<a href="addNew.php?actor=tch"><input value="Add New Teacher" type="button"></a>
 					<br>
 					

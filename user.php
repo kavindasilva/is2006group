@@ -12,6 +12,9 @@ if(isset($_SESSION['user'])){
 
 require_once 'dbcon.php';
 
+//login form eke JS valin validate karanna oni na
+//php valinma balamu
+
 if(isset($_POST['log'])){
 	//echo "form login";
 	$name = $_POST['uname'];
@@ -31,7 +34,7 @@ if(isset($_POST['log'])){
 	elseif ($rowcount==1)
 	{
 		$r = mysqli_fetch_array($result);
-		$rpass = $r['Password']; //password form DB
+		$rpass = $r['Password']; //password from DB
 		if ($rpass==$password)
 		{
 			$_SESSION['user']=''; //user id
