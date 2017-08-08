@@ -14,6 +14,9 @@ require_once 'dbcon.php';
 
 //login form eke JS valin validate karanna oni na
 //php valinma balamu
+//user type ekath balanna oni. type eke hatiyta redirect vena page eka venas venawa
+
+//header eke session eka balala logout button eka display karanna
 
 if(isset($_POST['log'])){
 	//echo "form login";
@@ -35,10 +38,33 @@ if(isset($_POST['log'])){
 	{
 		$r = mysqli_fetch_array($result);
 		$rpass = $r['Password']; //password from DB
+		$userType=$r['type'];
+		
 		if ($rpass==$password)
 		{
 			$_SESSION['user']=''; //user id
-			header('Location: user.php'); //redirection
+			
+			switch ($userType) {
+				case 'stud':
+					$_SESSION['utype']='stud';
+					header('Location: student/index.php');
+					break;
+				
+				case 'tch':
+					$_SESSION['utype']='tch';
+					header('Location: teacher/index.php');
+					break;
+				
+				case 'admin':
+					$_SESSION['utype']='admin';
+					header('Location: admin/index.php');
+					break;
+					
+				default:
+					//no need of default action
+					break;
+			}
+			//header('Location: user.php'); //redirection
 		} 
 	}
 	
