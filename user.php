@@ -1,4 +1,8 @@
 <?php
+/**
+ * this file is to validate user credentials and login
+ */
+ 
 //check session
 /*
 if(isset($_SESSION['user'])){

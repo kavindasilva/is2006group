@@ -87,6 +87,31 @@ include_once 'funs1.php';
 				viewTeachers();
 				?>
 			</div>
+			
+			<!--subjects list-->
+			<P>
+				<!--form action="subjects.php" method="post">
+					Filter subjectss by name:
+					<input type="button" onclick="clearAllTch()" value="clear search"/>
+					
+					<a href="subjects.php"><input value="Add New Subject" type="button"></a>
+					<br>
+					
+					<input type="text" name="skey" id="search21" onkeyup="searchRows(1,this.id, 'tblsub');" placeholder="subject name" />
+
+					<input type="text" name="skey" hidden/>
+					<input type="text" name="stype" value="tt" hidden />
+					<input type="submit" name="subsearch" value="search" hidden/>
+
+				</form-->
+			</P>
+			
+			
+			<div class="subject">
+				<?php //include 'funs1.php';
+				//viewTeachers();
+				?>
+			</div>
 		</div>
 
 	</body>

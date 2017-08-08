@@ -73,3 +73,9 @@ function clearAllTch() {
 
 	searchRows(0, 'search11', 'tbltch');
 }
+
+function clearSubjects() {
+	document.getElementById("search11").value = "";
+
+	searchRows(0, 'search11', 'tbltch');
+}
