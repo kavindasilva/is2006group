@@ -1,3 +1,23 @@
+<?php
+/* session maintain *
+session_start();
+if(isset($_SESSION['user'])){
+	echo "Hi, ".$_SESSION['user'].", ";
+	echo "<form method='get' action='logout.php'>";
+	echo "<a href='admin/index.php'><input type='button' value='Admin Panel'></a><input type='submit' value='logout'>";
+	echo "</form>";
+}
+else{
+	echo "<form  method='POST' action='login.php'> ";
+	echo "user name: <input type='text' name='uname1'> <br> ";
+	echo "password: <input type='password' name='upass1'> <br> ";
+
+	echo "<input type='submit' value='OK'><input type='reset' value='clear'> ";
+
+	echo "</form> ";
+}*/
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +28,7 @@
 
 <body>
 	
-	<form action="" method="post">
+	<form action="funs2.php" method="post">
 	
 	<table border="0" width="50%" align="center">
 	<thead>
@@ -98,6 +118,10 @@
 		<td> Address </td>
 		<td><input type="address" name="st_ad" > </td>
 	</tr>
+	<tr>
+		<td> </td>
+		<td><input type="submit" name="studentadd" value="Save" /> <input type="reset" value="Clear" > </td>
+	</tr>
 	
 	</tbody>
 	
@@ -109,6 +133,7 @@
 	</tr>
 	</tfoot>
 </table>
+</form>
 
 </body>
 </html>

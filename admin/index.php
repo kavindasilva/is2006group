@@ -20,6 +20,7 @@ include_once 'funs1.php';
 	<head>
 		<title>Admin control panel</title>
 		<link rel="stylesheet" type="text/css" href="../css/tables.css">
+		<link rel="stylesheet" type="text/css" href="../static/css/1nav.css">
 		<script type="text/javascript" src="../js/adminFun.js"></script>
 	</head>
 
@@ -27,7 +28,8 @@ include_once 'funs1.php';
 		<!--the top navi bar-->
 		<div>
 			<?php
-			include_once '../static/head1.php';			
+			//include_once '../static/head1.php';		
+			include_once '../static/php/navibar.php';	
 			?>
 		</div>
 		
@@ -40,7 +42,7 @@ include_once 'funs1.php';
 					<input type="button" onclick="clearAllStd()" value="clear search"/>
 					
 					<!--tharikage student form ekata link karanna oni-->
-					<a href="addNew.php?actor=std"><input value="Add New Student" type="button"></a>
+					<a href="regstudent.php"><input value="Add New Student" type="button"></a>
 					
 					<br>
 					<input type="text" name="skey" id="search1" onkeyup="searchRows(2,this.id, 'tblstd');" placeholder="first name" />
@@ -69,7 +71,7 @@ include_once 'funs1.php';
 					<input type="button" onclick="clearAllTch()" value="clear search"/>
 					
 					<!--tharikage teacher form ekata link karanna oni-->
-					<a href="addNew.php?actor=tch"><input value="Add New Teacher" type="button"></a>
+					<a href="regteacher.php"><input value="Add New Teacher" type="button"></a>
 					<br>
 					
 					<input type="text" name="skey" id="search11" onkeyup="searchRows(1,this.id, 'tbltch');" placeholder="first name" />

@@ -7,7 +7,7 @@
 
 <body>
 	
-	<form action="" method="post">
+	<form action="funs2.php" method="post">
 	
 	<table border="0" width="50%" align="center">
 	<thead>
@@ -24,10 +24,7 @@
 	<tr>
 		<th colspan="3"> <h2>Basic Information</h2> </th>
 	</tr>
-	<tr>
-		<td>Registration Date </td>
-		<td><input type="date" name="st_date"></td>
-	</tr>
+	
 
 	<tr>
 		<td>Class</td>
@@ -41,11 +38,7 @@
 		</select> </td>
 	</tr>
 	
-	<tr>
-		<td>Registration number</td>
-		<td><input type="number" name="st_no"</td>
-	</tr>
-	
+		
 	<tr>
 		<th colspan="3"> <h2>Student Information</h2> </th>
 	</tr>
@@ -64,19 +57,14 @@
 	</tr>
 	<tr>
 		<td>Gneder </td>
-		<td><input type="radio" name="gender" value="male"> Male 
+		<td><input type="radio" name="gender" value="male" checked> Male 
 			<input type="radio" name="gender" value="female"> Female </td>
 	</tr>	
 	<tr>
 		<td>Date of Birth </td>
 		<td><input type="date" name="st_BD"> </td>
 	</tr>
-	<tr>
-		<td>Bus Service </td>
-		<td> <input type="radio" name="service" value="yes">Yes
-			<input type="radio" name="service" value="no"> No 
-			<input type="radio" name="service" value="rarely"> Rarely </td>
-	</tr>
+	
 	<tr>
 		<th colspan="3"> <h2>Contact Information</h2> </th>
 	</tr>
@@ -92,6 +80,10 @@
 		<td> Address </td>
 		<td><input type="address" name="st_ad" > </td>
 	</tr>
+	<tr>
+		<td> </td>
+		<td><input type="submit" name="studentadd" value="Save" /> <input type="reset" value="Clear" > </td>
+	</tr>
 	
 	</tbody>
 	
@@ -103,6 +95,7 @@
 	</tr>
 	</tfoot>
 </table>
+</form>
 
 </body>
 </html>

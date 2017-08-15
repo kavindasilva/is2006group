@@ -1,5 +1,10 @@
 <?php
 //this file has functions only
+/* delete student
+ * delete teacher
+ * view students
+ * view teachers
+ */
 
 require "../dbcon.php";
 //global $conn;
@@ -12,6 +17,23 @@ if(isset($_POST['update'])){
 		updateStd($_POST['sid']);
 	elseif($_POST['actor']=="tt")
 		updateTch($_POST['tid']);
+}
+
+//reset password ******************************
+if(isset($_POST['rest'])){
+	if($_POST['actor']=="ss")
+		$sql1="update student set pass='ucsc' where sid=".$_POST['sid']."";
+	elseif($_POST['actor']=="tt")
+		$sql1="update teacher set pass='ucsc' where tid=".$_POST['tid'];
+	
+	if(mysqli_query($GLOBALS['conn'], $sql1)){
+		echo "Password reset successfully";
+		//delete student and redirect to main page
+		echo "<script type='text/javascript'>";
+		echo "alert('Password reset succesfully.');";
+		echo "window.location.href = 'index.php';";
+		echo "</script>";
+	}
 }
 
 //delete
@@ -54,7 +76,7 @@ function viewStudents() {
 			//echo "<form method='post' action='funs1.php' onsubmit='confirmD();'>";
 			//echo "<form method='post' action=''>"; //auto refreshing
 			
-			echo "<tr><input type='text' name='sid' value='" . $row['sid'] . "' hidden/>"; //make teacher
+			echo "<tr><input type='text' name='sid' value='" . $row['sid'] . "' hidden/>"; //make student
 			echo "<input type='text' name='actor' value='ss' hidden/>"; //set as student 
 			
 			echo "<td>" . $row['sid'] . "</td>";
@@ -69,7 +91,8 @@ function viewStudents() {
 			echo "<td>" . $row['address'] . "</td>";
 			
 			echo "<td><input type='submit' name='update' onclick='return confirmU()' value='Update'/></td>";
-			echo "<td><input type='submit' name='delete' onclick='return confirmD()' value='DELETE' style='color:red'/></td></tr></form>";	
+			echo "<td><input type='submit' name='delete' onclick='return confirmD()' value='DELETE' style='color:red'/></td></tr></form>";
+			echo "<td><input type='submit' name='rest' onclick='return confirmU()' value='reset password'/></td>";	
 		}
 		echo "</table>";
 	}
@@ -100,7 +123,8 @@ function viewTeachers() {
 			echo "<td>" . $row['nic'] . "</td>";
 			
 			echo "<td><input type='submit' name='update' onclick='return confirmU()' value='Update'/></td>";
-			echo "<td><input type='submit' name='delete' onclick='return confirmD()' value='DELETE' style='color:red'/></td></tr></form>";	
+			echo "<td><input type='submit' name='delete' onclick='return confirmD()' value='DELETE' style='color:red'/></td></tr></form>";
+			echo "<td><input type='submit' name='rest' onclick='return confirmU()' value='reset password'/></td>";	
 		}
 		echo "</table>";
 	}

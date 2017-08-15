@@ -1,0 +1,84 @@
+
+/* styles regarding the navi bar */
+
+#navcontainer{
+	/*height: 180px;*/
+	
+}
+
+#header{
+padding: 0;
+height: 20%;
+background-color: #668cff;
+border-bottom: 1px solid gray;
+width: 20%;
+}
+.drop ul{
+	margin: 0px; 
+	padding:0px;
+	list-style: none; 
+}
+.drop ul li a{
+	text-decoration: none;
+	color:white;
+	display: block;
+}
+.drop ul li{
+	float: left;
+	width: 150px;
+	height: 40px;
+	background-color:#000066;
+	font-size: 20px;
+	line-height: 40px;
+	text-align: center;
+	opacity:8;
+	margin-right: 2px;
+	border: 5px solid black;
+
+}
+.drop ul li a:hover{
+	background-color:#b3b3ff; 
+
+}
+.drop ul li ul li{
+	display: none;
+}
+.drop ul li:hover ul li{
+	display: block;
+}
+.imgl {
+float: left;
+width: 100px;
+height: 100px;
+}
+#header h1{
+padding: 0px 15px;
+margin: 0 auto;
+height: 100px;
+text-align: center;
+background-color: #b3b3ff;
+}
+#nav {
+	  line-height:10px;
+    background-color:#0c3a5f;
+    height:40px;
+    
+    width:60%;
+ 
+    padding:15px;
+    text-align:right;
+}
+
+#rightnav{
+float:right;
+text-align:left;
+width:20%;
+
+/*height:500px;
+border: 1px solid #2980b9 ;*/
+margin:10px auto;
+margin-right: 10px;
+
+padding: 10px;
+list-style-type: none;
+}
