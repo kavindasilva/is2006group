@@ -7,24 +7,23 @@
  */
 
 require "../dbcon.php";
-//global $conn;
 
 //update
 if(isset($_POST['update'])){
 	require_once 'funs3.php'; //update function contains here
-	//header('Location: funs3.php'); //update
+
 	if($_POST['actor']=="ss")
 		updateStd($_POST['sid']);
 	elseif($_POST['actor']=="tt")
 		updateTch($_POST['tid']);
 }
 
-//reset password ******************************
+//reset password 
 if(isset($_POST['rest'])){
 	if($_POST['actor']=="ss")
-		$sql1="update student set pass='ucsc' where sid=".$_POST['sid']."";
+		$sql1="update student set passw='student' where sid=".$_POST['sid']."";
 	elseif($_POST['actor']=="tt")
-		$sql1="update teacher set pass='ucsc' where tid=".$_POST['tid'];
+		$sql1="update teacher set passw='ucsc' where tid=".$_POST['tid'];
 	
 	if(mysqli_query($GLOBALS['conn'], $sql1)){
 		echo "Password reset successfully";
@@ -34,18 +33,22 @@ if(isset($_POST['rest'])){
 		echo "window.location.href = 'index.php';";
 		echo "</script>";
 	}
+	else{
+		echo mysqli_error($GLOBALS['conn']);
+		echo "<script type='text/javascript'>";
+		echo "alert('Password reset error');";
+		echo "window.location.href = 'index.php';";
+		echo "</script>"; 
+	}
 }
 
 //delete
 if(isset($_POST['delete'])){
-	//echo "del called<br>";//echo $_POST['sid']."<br>";echo $_POST['tid']."<br>";echo $_POST['actor']."<BR>";
-	
+		
 	if($_POST['actor']=="ss")
 		$sql1="delete from student where sid=".$_POST['sid']."";
 	elseif($_POST['actor']=="tt")
 		$sql1="delete from teacher where tid=".$_POST['tid'];
-	
-	//echo "$sql1";
 	
 	if(mysqli_query($GLOBALS['conn'], $sql1)){
 		echo "Record deleted successfully";
@@ -73,9 +76,7 @@ function viewStudents() {
 		
 		while ($row = mysqli_fetch_array($res)) {
 			echo "<form method='post' action='funs1.php'>";
-			//echo "<form method='post' action='funs1.php' onsubmit='confirmD();'>";
-			//echo "<form method='post' action=''>"; //auto refreshing
-			
+
 			echo "<tr><input type='text' name='sid' value='" . $row['sid'] . "' hidden/>"; //make student
 			echo "<input type='text' name='actor' value='ss' hidden/>"; //set as student 
 			
@@ -111,7 +112,6 @@ function viewTeachers() {
 		echo "<th>telephone no</th> <th>subject</th> </tr>";
 		while ($row = mysqli_fetch_array($res)) {
 			echo "<form method='post' action='funs1.php'>";
-			//echo "<form method='post' action=''>"; //auto refreshing
 			
 			echo "<tr><input type='text' name='tid' value='" . $row['tid'] . "' hidden/>"; //make teacher
 			echo "<input type='text' name='actor' value='tt' hidden/>"; //set as teacher
@@ -121,7 +121,7 @@ function viewTeachers() {
 			echo "<td>" . $row['gender'] . "</td>";
 			echo "<td>" . $row['qualification'] . "</td>";
 			echo "<td>" . $row['email'] . "</td>";
-			//echo "<td>" . $row['address'] . "</td>";
+
 			echo "<td>" . $row['telephone'] . "</td>";
 			echo "<td>" . $row['subject'] . "</td>";
 			

@@ -13,10 +13,8 @@ if (isset($_POST['studentadd'])) {
 	$dob=$_POST['st_BD'];
 	$addr=$_POST['address'];
 	$t1=$_POST['st_tel'];
-	//$t2=$_POST['tp2'];
 	$gend=$_POST['gender'];
-	//$pht= 10;//$_POST['stphoto'];
-	//$sqlq="insert into student values(null,'".$_POST['fname']."','".$_POST['lname']."', '".$ttt."' );";
+
 	
 	$sqlq = "insert into student values(null, '$fname', '$lname', '$parent', '$dob', '$gend', '$cls', '$addr', '$t1', 'student');";
 	echo $sqlq;
@@ -33,14 +31,11 @@ if (isset($_POST['studentadd'])) {
 		echo "alert('Student added succesfully. New student ID is $newID');";
 		echo "window.location.href = 'index.php';";
 		echo "</script>";
-		
-		//echo "<script>alert('Student added succesfully. New student ID is ".$newID."')</script>";
-		//header('Location:./'); //index.php
-		//echo "<script>alert('Student added succesfully')</script>"; //working
-	} else {
+	} 
+	else {
 		echo "error inserting the student";
 	}
-
+	mysqli_close($conn);
 }
 
 if (isset($_POST['teacheradd'])) {
@@ -70,12 +65,9 @@ if (isset($_POST['teacheradd'])) {
 		echo "window.location.href = 'index.php';";
 		echo "</script>";
 		
-		//echo "<script>alert('Student added succesfully. New student ID is ".$newID."')</script>";
-		//header('Location:./'); //index.php
-		//echo "<script>alert('Student added succesfully')</script>"; //working
 	} else {
 		echo "error inserting the teacher ".mysqli_error($GLOBALS['conn']);
 	}
-
+	mysqli_close($conn);
 }
 ?>

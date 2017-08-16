@@ -20,15 +20,31 @@ if(isset($_POST['updatestd'])){
 		echo "window.location.href = 'index.php';";
 		echo "</script>"; 
 	}
+	else{
+		echo mysqli_error($GLOBALS['conn']);
+		echo "<script type='text/javascript'>";
+		echo "alert('Student update error');";
+		echo "window.location.href = 'index.php';";
+		echo "</script>"; 
+	}
 }
 
 if(isset($_POST['updatetch'])){
-	$newfname=$_POST['fname']; $newlname=$_POST['lname']; $newTP=$_POST['tpno'];
-	$sqlq="update teacher set fname='$newfname', lname='$newlname', telno='$newTP' where tid=".$_POST['utid'];
+	$newfname=$_POST['name']; $newAddr=$_POST['addr']; $newTP=$_POST['tpno']; $newSub=$_POST['subjects'];
+	$newEmail=$_POST['email']; $newQual=$_POST['qual'];
+	
+	$sqlq="update teacher set name='$newfname', telephone='$newTP', qualification='$newQual', address='$newAddr', email='$newEmail', subject='$newSub' where tid=".$_POST['utid'];
 	
 	if(mysqli_query($GLOBALS['conn'], $sqlq)){
 		echo "<script type='text/javascript'>";
 		echo "alert('Teacher updated succesfully');";
+		echo "window.location.href = 'index.php';";
+		echo "</script>"; 
+	}
+	else{
+		echo mysqli_error($GLOBALS['conn']);
+		echo "<script type='text/javascript'>";
+		echo "alert('Teacher update error');";
 		echo "window.location.href = 'index.php';";
 		echo "</script>"; 
 	}
@@ -46,8 +62,8 @@ function updateStd($stdid){
 	else{
 		echo "<form method='post' action='funs3.php'>";
 		echo "<table id='tblstd'>";
-		//echo "<tr><th>First name</th> <th>Last name</th> <th>Home town</th> </tr>";
-		while ($row = mysqli_fetch_array($res)) {
+
+				while ($row = mysqli_fetch_array($res)) {
 			echo "<tr><input type='text' name='usid' value='".$row['sid']."' hidden/></tr>"; //make student
 			echo "<tr><td>Student ID</td> <td><input type='text' name='sid' value='" . $row['sid'] . "' disabled/><td></tr>"; //set as student 
 			
@@ -66,8 +82,9 @@ function updateStd($stdid){
 	}
 }
 
+//update teacher details
 function updateTch($tchid){
-	//echo "update $tchid";
+
 	$sqlq = "select * from teacher where tid=$tchid;"; //sql query
 	$res = mysqli_query($GLOBALS['conn'] , $sqlq); //result
 	
@@ -76,12 +93,12 @@ function updateTch($tchid){
 	else{
 		echo "<form method='post' action='funs3.php'>";
 		echo "<table id='tbltch'>";
-		//echo "<tr><th>First name</th> <th>Last name</th> <th>Home town</th> </tr>";
+
 		while ($row = mysqli_fetch_array($res)) {
 			echo "<tr><input type='text' name='utid' value='".$row['tid']."' hidden/></tr>"; //make teacher
 			echo "<tr><td>Teacher ID</td> <td><input type='text' name='tid' value='" . $row['tid'] . "' disabled/><td></tr>"; //set as student 
 			
-			echo "<tr><td>Full Name</td> <td><input type='text' name='fname' value='" . $row['name'] . "'></td></tr>";
+			echo "<tr><td>Full Name</td> <td><input type='text' name='name' value='" . $row['name'] . "'></td></tr>";
 			echo "<tr><td>Qualifications</td> <td><textarea name='qual' >".$row['qualification']."</textarea></td></tr>";
 			echo "<tr><td>Subject</td> <td>
 			<select name='subjects' >
@@ -94,9 +111,9 @@ function updateTch($tchid){
 			</select>
 			</td></tr>";
 			
-			echo "<tr><td>Email</td> <td><input type='text' name='tpno' value='" . $row['email'] . "'></td></tr>";
+			echo "<tr><td>Email</td> <td><input type='text' name='email' value='" . $row['email'] . "'></td></tr>";
 			echo "<tr><td>Telephone</td> <td><input type='text' name='tpno' value='" . $row['telephone'] . "'></td></tr>";
-			echo "<tr><td>Address</td> <td><textarea name='tpno'>" . $row['address'] . "'</textarea></td></tr>";
+			echo "<tr><td>Address</td> <td><textarea name='addr'>" . $row['address'] . "</textarea></td></tr>";
 			
 		}
 		echo "</table>";
