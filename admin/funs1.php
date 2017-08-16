@@ -91,8 +91,8 @@ function viewStudents() {
 			echo "<td>" . $row['address'] . "</td>";
 			
 			echo "<td><input type='submit' name='update' onclick='return confirmU()' value='Update'/></td>";
-			echo "<td><input type='submit' name='delete' onclick='return confirmD()' value='DELETE' style='color:red'/></td></tr></form>";
-			echo "<td><input type='submit' name='rest' onclick='return confirmU()' value='reset password'/></td>";	
+			echo "<td><input type='submit' name='delete' onclick='return confirmD()' value='DELETE' style='color:red'/></td>";
+			echo "<td><input type='submit' name='rest' onclick='return confirmU()' value='reset password'/></td></tr></form>";	
 		}
 		echo "</table>";
 	}
@@ -108,7 +108,8 @@ function viewTeachers() {
 	
 	else {
 		echo "<table id='tbltch'>";
-		echo "<tr> <TH>ID</th> <th>First name</th> <th>Last name</th> <th>Telephone</th> <th>NIC no</th></tr>";
+		echo "<tr> <TH>ID</th> <th>Full name</th> <th>Gender</th> <th>Qualifications</th> <th>email</th>";
+		echo "<th>telephone no</th> <th>subject</th> </tr>";
 		while ($row = mysqli_fetch_array($res)) {
 			echo "<form method='post' action='funs1.php'>";
 			//echo "<form method='post' action=''>"; //auto refreshing
@@ -117,14 +118,17 @@ function viewTeachers() {
 			echo "<input type='text' name='actor' value='tt' hidden/>"; //set as teacher
 			
 			echo "<td>" . $row['tid'] . "</td>";
-			echo "<td>" . $row['fname'] . "</td>";
-			echo "<td>" . $row['lname'] . "</td>";
-			echo "<td>" . $row['telno'] . "</td>";
-			echo "<td>" . $row['nic'] . "</td>";
+			echo "<td>" . $row['name'] . "</td>";
+			echo "<td>" . $row['gender'] . "</td>";
+			echo "<td>" . $row['qualification'] . "</td>";
+			echo "<td>" . $row['email'] . "</td>";
+			//echo "<td>" . $row['address'] . "</td>";
+			echo "<td>" . $row['telephone'] . "</td>";
+			echo "<td>" . $row['subject'] . "</td>";
 			
 			echo "<td><input type='submit' name='update' onclick='return confirmU()' value='Update'/></td>";
-			echo "<td><input type='submit' name='delete' onclick='return confirmD()' value='DELETE' style='color:red'/></td></tr></form>";
-			echo "<td><input type='submit' name='rest' onclick='return confirmU()' value='reset password'/></td>";	
+			echo "<td><input type='submit' name='delete' onclick='return confirmD()' value='DELETE' style='color:red'/></td>";
+			echo "<td><input type='submit' name='rest' onclick='return confirmU()' value='reset password'/></td></tr></form>";	
 		}
 		echo "</table>";
 	}

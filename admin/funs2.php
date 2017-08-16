@@ -6,18 +6,19 @@ insert teacher
 require_once '../dbcon.php';
 
 if (isset($_POST['studentadd'])) {
-	$fname=$_POST['fname'];
-	$lname=$_POST['lname'];
+	$fname=$_POST['st_fname'];
+	$lname=$_POST['st_lname'];
+	$parent=$_POST['st_par'];
 	$cls=$_POST['cls'];
-	$dob=$_POST['dob'];
-	$addr=$_POST['addr'];
-	$t1=$_POST['tp'];
-	$t2=$_POST['tp2'];
-	$gend=$_POST['gend'];
-	$pht= 10;//$_POST['stphoto'];
+	$dob=$_POST['st_BD'];
+	$addr=$_POST['ast_d'];
+	$t1=$_POST['st_tel'];
+	//$t2=$_POST['tp2'];
+	$gend=$_POST['gender'];
+	//$pht= 10;//$_POST['stphoto'];
 	//$sqlq="insert into student values(null,'".$_POST['fname']."','".$_POST['lname']."', '".$ttt."' );";
 	
-	$sqlq = "insert into student values(null, '$fname', '$lname', '$cls', '$dob', '$addr', '$t1', '$t2', '$gend', $pht);";
+	$sqlq = "insert into student values(null, '$fname', '$lname', '$parent', '$dob', '$gend', '$cls', '$addr', '$t1', 'student');";
 	echo $sqlq;
 
 	if (mysqli_query($GLOBALS['conn'], $sqlq)) { //after suxxesful execution of query
@@ -43,13 +44,17 @@ if (isset($_POST['studentadd'])) {
 }
 
 if (isset($_POST['teacheradd'])) {
-	$fname=$_POST['fname'];
-	$lname=$_POST['lname'];
+	$fullname=$_POST['tch_name'];
+	$gend=$_POST['gender'];
+	$dob=$_POST['tch_BD'];
+	$qulif=$_POST['qual'];
+	$eml=$_POST['tch_email'];
 	$addr=$_POST['addr'];
-	$tel=$_POST['tp'];
-	$nic=$_POST['nic'];
+	$tel=$_POST['tch_tel'];
+	$sub=$_POST['classes'];
+	//$nic=$_POST['nic'];
 	
-	$sqlq = "insert into teacher values(null, '$nic', '$fname', '$lname', '$addr', '$tel');";
+	$sqlq = "insert into teacher values(null, '$fullname', '$gend', '$dob', '$qulif', '$eml', '$addr', '$tel', 'ucsc', '$sub');";
 	//echo $sqlq;
 
 	if (mysqli_query($GLOBALS['conn'], $sqlq)) {
@@ -69,7 +74,7 @@ if (isset($_POST['teacheradd'])) {
 		//header('Location:./'); //index.php
 		//echo "<script>alert('Student added succesfully')</script>"; //working
 	} else {
-		echo "error inserting the teacher";
+		echo "error inserting the teacher ".mysqli_error($GLOBALS['conn']);
 	}
 
 }
