@@ -1,6 +1,23 @@
 <?php
-require_once 'sesion.php'; 
+echo "<div style='float:right; align:left'>";
+session_start();
+if(isset($_SESSION['user'])){
+	echo "Hi, ".$_SESSION['user'].", ";
+	echo "<form method='get' action='logout.php'>";
+	echo "<input type='submit' value='logout'>";
+	echo "</form>";
+}
+else{
+	echo "You are not logged in<br><table>";
+	echo "<form  method='POST' action='user.php'> ";
+	echo "<tr><td>user name:</td><td> <input type='text' name='uname'> </td></tr>";
+	echo "<tr><td>password:</td><td> <input type='password' name='pass'> </td></tr> ";
 
+	echo "<tr><td></td><td><input type='submit' value='OK'><input type='reset' value='clear'></td></tr> ";
+
+	echo "</form></table> ";
+}
+echo "</div>";
 /**/
 ?>
 
@@ -24,11 +41,11 @@ require_once 'sesion.php';
 		<div id="nav">
 		<div class="drop">
 		<ul>
-			<li><a accesskey="1" tabindex="1" href="./static/php/index.php">Home</a></li>
+			<li><a accesskey="1" tabindex="1" href="">Home</a></li>
 			<li><a accesskey="2" tabindex="2" href="./static/php/aboutus.php">About Us</a></li>
 			<li><a accesskey="3" tabindex="3" href="./admin/index.php">Admin</a></li>
 			<li><a accesskey="4" tabindex="4" href="./static/php/comment.php">Teacher</a></li>
-			<li><a accesskey="5" tabindex="5" href="./static/php/event.php">Student</a>
+			<li><a accesskey="5" tabindex="5" href="./student/index.php">Student</a>
 				<ul>
 					<li><a accesskey="6" tabindex="6" href="news.html">View syllabus</a></li>
 					<li><a accesskey="7" tabindex="7" href="contactus.html">View lecture notes</a></li>
