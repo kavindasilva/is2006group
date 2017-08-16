@@ -53,7 +53,7 @@ else{
 	</tr>
 	<tr>
 		<td>Subject</td>
-		<td><select name="classes" >
+		<td><select name="subjects" >
 		<option value="sinhala">Sinhala</option>
 		<option value="religion">Religion</option>
 		<option value="maths">Mathematics</option>
@@ -95,7 +95,10 @@ else{
 	</tr>
 	<tr>
 		<td> </td>
-		<td><input type="submit" name="teacheradd" value="Save" /> <input type="reset" value="Clear" > </td>
+		<td><input type="submit" name="teacheradd" value="Save" />
+			<input type="reset" value="Clear" >
+			<input type='button' name='cancel' onclick='redirectMain();' value='Cancel'/></td>
+		</td>
 	</tr>
 	
 	</tbody>

@@ -1,6 +1,6 @@
 <?php
 /**
-this file contains functions only. JS is included but not executed
+this file contains functions only. JS is included 
 update student
 update teacher
 */
@@ -9,10 +9,10 @@ echo "<script type='text/javascript' src='../js/adminFun.js'></script>";
 
 if(isset($_POST['updatestd'])){
 	$newfname=$_POST['fname']; $newlname=$_POST['lname']; $newclass=$_POST['cls'];
-	$newtp1=$_POST['tp1']; $newtp2=$_POST['tp2']; $newadd=$_POST['addr'];
+	$newtp1=$_POST['tp1']; $newadd=$_POST['addr']; $newParent=$_POST['paren'];
 	
 	$sqlq="update student set fname='$newfname', lname='$newlname', class='$newclass', 
-	tel1='$newtp1', tel2='$newtp2', address='$newadd' where sid=".$_POST['usid'];
+	tel1='$newtp1', address='$newadd', parent='$newParent' where sid=".$_POST['usid'];
 	
 	if(mysqli_query($GLOBALS['conn'], $sqlq)){
 		echo "<script type='text/javascript'>";
@@ -54,9 +54,9 @@ function updateStd($stdid){
 			echo "<tr><td>First Name</td> <td><input type='text' name='fname' value='" . $row['fname'] . "'></td></tr>";
 			echo "<tr><td>Last Name</td> <td><input type='text' name='lname' value='" . $row['lname'] . "'></td></tr>";
 			echo "<tr><td>Class</td> <td><input type='text' name='cls' value='" . $row['class'] . "'></td></tr>";
-			echo "<tr><td>Telephone1</td> <td><input type='text' name='tp1' value='" . $row['tel1'] . "'></td></tr>";
-			echo "<tr><td>Telephone2</td> <td><input type='text' name='tp2' value='" . $row['tel2'] . "'></td></tr>";
-			echo "<tr><td>Address</td> <td><input type='text' name='addr' value='" . $row['address'] . "'></td></tr>";
+			echo "<tr><td>Telephone</td> <td><input type='text' name='tp1' value='" . $row['tel1'] . "'></td></tr>";
+			echo "<tr><td>Parent name</td> <td><input type='text' name='paren' value='" . $row['parent'] . "'></td></tr>";
+			echo "<tr><td>Address</td> <td><textarea name='addr'>".$row['address']."</textarea></td></tr>";
 			
 		}
 		echo "</table>";
@@ -81,9 +81,22 @@ function updateTch($tchid){
 			echo "<tr><input type='text' name='utid' value='".$row['tid']."' hidden/></tr>"; //make teacher
 			echo "<tr><td>Teacher ID</td> <td><input type='text' name='tid' value='" . $row['tid'] . "' disabled/><td></tr>"; //set as student 
 			
-			echo "<tr><td>First Name</td> <td><input type='text' name='fname' value='" . $row['fname'] . "'></td></tr>";
-			echo "<tr><td>Last Name</td> <td><input type='text' name='lname' value='" . $row['lname'] . "'></td></tr>";
-			echo "<tr><td>Telephone</td> <td><input type='text' name='tpno' value='" . $row['telno'] . "'></td></tr>";
+			echo "<tr><td>Full Name</td> <td><input type='text' name='fname' value='" . $row['name'] . "'></td></tr>";
+			echo "<tr><td>Qualifications</td> <td><textarea name='qual' >".$row['qualification']."</textarea></td></tr>";
+			echo "<tr><td>Subject</td> <td>
+			<select name='subjects' >
+				<option value='sinhala'>Sinhala</option>
+				<option value='religion'>Religion</option>
+				<option value='maths''>Mathematics</option>
+				<option value='science'>Science</option>
+				<option value='history'>History</option>
+				<option value='english''>English</option>
+			</select>
+			</td></tr>";
+			
+			echo "<tr><td>Email</td> <td><input type='text' name='tpno' value='" . $row['email'] . "'></td></tr>";
+			echo "<tr><td>Telephone</td> <td><input type='text' name='tpno' value='" . $row['telephone'] . "'></td></tr>";
+			echo "<tr><td>Address</td> <td><textarea name='tpno'>" . $row['address'] . "'</textarea></td></tr>";
 			
 		}
 		echo "</table>";

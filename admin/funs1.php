@@ -11,7 +11,7 @@ require "../dbcon.php";
 
 //update
 if(isset($_POST['update'])){
-	require_once 'funs3.php'; //update function
+	require_once 'funs3.php'; //update function contains here
 	//header('Location: funs3.php'); //update
 	if($_POST['actor']=="ss")
 		updateStd($_POST['sid']);

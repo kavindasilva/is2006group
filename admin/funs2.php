@@ -51,7 +51,7 @@ if (isset($_POST['teacheradd'])) {
 	$eml=$_POST['tch_email'];
 	$addr=$_POST['addr'];
 	$tel=$_POST['tch_tel'];
-	$sub=$_POST['classes'];
+	$sub=$_POST['subjects'];
 	//$nic=$_POST['nic'];
 	
 	$sqlq = "insert into teacher values(null, '$fullname', '$gend', '$dob', '$qulif', '$eml', '$addr', '$tel', 'ucsc', '$sub');";

@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="Styles.css">
+		<script type='text/javascript' src='../js/adminFun.js'></script>
 
 		<title> Students Registration Form </title>
 	</head>
@@ -80,7 +81,7 @@
 						<td>
 						<input type="submit" name="studentadd" value="Save" />
 						<input type="reset" value="Clear" >
-						</td>
+						<input type='button' name='cancel' onclick='redirectMain();' value='Cancel'/></td>				
 					</tr>
 
 				</tbody>
