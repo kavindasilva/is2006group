@@ -11,7 +11,7 @@ if (isset($_POST['studentadd'])) {
 	$parent=$_POST['st_par'];
 	$cls=$_POST['cls'];
 	$dob=$_POST['st_BD'];
-	$addr=$_POST['ast_d'];
+	$addr=$_POST['address'];
 	$t1=$_POST['st_tel'];
 	//$t2=$_POST['tp2'];
 	$gend=$_POST['gender'];

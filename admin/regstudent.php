@@ -24,20 +24,7 @@
 					<tr>
 						<th colspan="3"><h2>Student Information</h2></th>
 					</tr>
-					<tr>
-						<td>Class</td>
-						<td>
-						<select name="classes" >
-							<option value="1">Grade 1</option>
-							<option value="2">Grade 2</option>
-							<option value="3">Grade 3</option>
-							<option value="4">Grade 4</option>
-							<option value="5">Grade 5</option>
-
-						</select></td>
-					</tr>
-
-					
+										
 					<tr>
 						<td> Student first Name </td>
 						<td><input type="text" name="st_fname" </td>
@@ -84,7 +71,8 @@
 					<tr>
 						<td> Address </td>
 						<td>
-						<input type="address" name="st_ad" >
+						<!--input type="address" name="st_ad" -->
+						<textarea name="address"></textarea>
 						</td>
 					</tr>
 					<tr>
