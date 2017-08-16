@@ -3,11 +3,11 @@
 /**/
  if(!isset($_SESSION['user'])){
 	echo "user not set";
-	//header('Location:../login.html');
+	header('Location:../index.php');
  }
  elseif ($_SESSION['utype']!="adm") {
      echo "not an admin";
-	 //header('Location:../login.html');
+	 header('Location:../index.php');
  }
 
 /**/
@@ -45,10 +45,10 @@ include_once 'funs1.php';
 					<a href="regstudent.php"><input value="Add New Student" type="button"></a>
 					
 					<br>
-					<input type="text" name="skey" id="search1" onkeyup="searchRows(2,this.id, 'tblstd');" placeholder="first name" />
-					<input type="text" name="skey" id="search2" onkeyup="searchRows(3,this.id, 'tblstd');" placeholder="last name" />
-					<input type="text" name="skey" id="search3" onkeyup="searchRows(5,this.id, 'tblstd');" placeholder="class" />
-					<input type="text" name="skey" id="search4" onkeyup="searchRows(9,this.id, 'tblstd');" placeholder="address" />
+					<input type="text" name="skey" id="search1" onkeyup="searchRows(1,this.id, 'tblstd');" placeholder="first name" />
+					<input type="text" name="skey" id="search2" onkeyup="searchRows(2,this.id, 'tblstd');" placeholder="last name" />
+					<input type="text" name="skey" id="search3" onkeyup="searchRows(4,this.id, 'tblstd');" placeholder="class" />
+					<input type="text" name="skey" id="search4" onkeyup="searchRows(8,this.id, 'tblstd');" placeholder="address" />
 
 					<input type="text" name="stype" value="ss" hidden />
 					<input type="submit" name="usearch" value="search" hidden/>
@@ -74,10 +74,10 @@ include_once 'funs1.php';
 					<a href="regteacher.php"><input value="Add New Teacher" type="button"></a>
 					<br>
 					
-					<input type="text" name="skey" id="search11" onkeyup="searchRows(1,this.id, 'tbltch');" placeholder="first name" />
-					<input type="text" name="skey" id="search12" onkeyup="searchRows(2,this.id, 'tbltch');" placeholder="last name" />
-					<input type="text" name="skey" id="search13" onkeyup="searchRows(3,this.id, 'tbltch');" placeholder="telephone" />
-					<input type="text" name="skey" id="search14" onkeyup="searchRows(4,this.id, 'tbltch');" placeholder="NIC" />
+					<input type="text" name="skey" id="search11" onkeyup="searchRows(1,this.id, 'tbltch');" placeholder="full name" />
+					<input type="text" name="skey" id="search12" onkeyup="searchRows(4,this.id, 'tbltch');" placeholder="email" />
+					<input type="text" name="skey" id="search13" onkeyup="searchRows(5,this.id, 'tbltch');" placeholder="telephone" />
+					<input type="text" name="skey" id="search14" onkeyup="searchRows(6,this.id, 'tbltch');" placeholder="subject" />
 
 					<input type="text" name="skey" hidden/>
 					<input type="text" name="stype" value="tt" hidden />

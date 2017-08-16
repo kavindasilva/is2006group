@@ -28,17 +28,17 @@
 										
 					<tr>
 						<td> Student first Name </td>
-						<td><input type="text" name="st_fname" </td>
+						<td><input type="text" name="st_fname" required></td>
 						
 						</tr>
 					<tr>
 						<td> Student last Name </td>
-						<td><input type="text" name="st_lname" </td>
+						<td><input type="text" name="st_lname" required> </td>
 						
 						</tr>
 						<tr>
 						<td> Parent's Name </td>
-						<td><input type="text" name="st_par"> </td>
+						<td><input type="text" name="st_par" required> </td>
 						</tr>
 						
 						<tr> <td>Gender </td>
@@ -49,13 +49,13 @@
 					
 					<tr>
 						<td>Class</td>
-						<td><input type="text" name="cls" /></td>
+						<td><input type="text" name="cls" required/></td>
 					</tr>
 					
 					<tr>
 						<td>Date of Birth </td>
 						<td>
-						<input type="date" name="st_BD">
+						<input type="date" name="st_BD" required>
 						</td>
 					</tr>
 
@@ -65,7 +65,7 @@
 					<tr>
 						<td> Contact Number </td>
 						<td>
-						<input type="tel" name="st_tel" >
+						<input type="tel" name="st_tel" required>
 						</td>
 					</tr>
 					

@@ -48,13 +48,13 @@ else{
 
 	<tr>
 		<td> Teacher's Name </td>
-		<td><input type="text" name="tch_name" </td>
+		<td><input type="text" name="tch_name" required/></td>
 		
 	</tr>
 	<tr>
 		<td>Subject</td>
 		<td><select name="subjects" >
-		<option value="sinhala">Sinhala</option>
+		<option value="sinhala" selected>Sinhala</option>
 		<option value="religion">Religion</option>
 		<option value="maths">Mathematics</option>
 		<option value="science">Science</option>
@@ -72,7 +72,7 @@ else{
 	</tr>	
 	<tr>
 		<td>Date of Birth </td>
-		<td><input type="date" name="tch_BD"> </td>
+		<td><input type="date" name="tch_BD" required> </td>
 	</tr>
 	<tr>	
 		<td> Qualifications </td>
@@ -83,11 +83,11 @@ else{
 	</tr>
 	<tr>
 		<td> Contact Number </td>
-		<td><input type="tel" name="tch_tel" maxlength="10"> </td>
+		<td><input type="tel" name="tch_tel" maxlength="10" required> </td>
 	</tr>
 	<tr>
 		<td> Email ID </td>
-		<td><input type="email" name="tch_email" > </td>
+		<td><input type="email" name="tch_email" required> </td>
 	</tr>
 	<tr>
 		<td> Address </td>

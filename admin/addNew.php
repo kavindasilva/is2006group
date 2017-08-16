@@ -3,11 +3,11 @@
 /**/
  if(!isset($_SESSION['user'])){
 	echo "user not set";
-	//header('Location:../login.html');
+	header('Location:../login.html');
  }
  elseif ($_SESSION['utype']!="adm") {
      echo "not an admin";
-	 //header('Location:../login.html');
+	 header('Location:../login.html');
  }
 
 /**/
