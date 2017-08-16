@@ -1,6 +1,21 @@
 <?php
 
+session_start();
 
+if ( (!isset($_SESSION['user'])) || ($_SESSION['usertype']!='std') ){
+	header("Location: ../index.php");
+	exit();
+}
+
+echo "<div style='float:right; align:left'>";
+
+if(isset($_SESSION['user'])){
+	echo "Hi, ".$_SESSION['user'].", ";
+	echo "<form method='get' action='../logout.php'>";
+	echo "<input type='submit' value='logout'>";
+	echo "</form>";
+}
+echo "</div>";
 
 ?>
 
@@ -8,7 +23,7 @@
 
 <head>
 	<title>Student</title>
-	<link rel="stylesheet" type="text/css" href="../css/studentcss.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/studentcss.css">
 
 </head>
 <body>

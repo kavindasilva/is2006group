@@ -41,7 +41,7 @@ echo "</div>";
 		<div id="nav">
 		<div class="drop">
 		<ul>
-			<li><a accesskey="1" tabindex="1" href="">Home</a></li>
+			<li><a accesskey="1" tabindex="1" href="index.php">Home</a></li>
 			<li><a accesskey="2" tabindex="2" href="./static/php/aboutus.php">About Us</a></li>
 			<li><a accesskey="3" tabindex="3" href="./admin/index.php">Admin</a></li>
 			<li><a accesskey="4" tabindex="4" href="./static/php/comment.php">Teacher</a></li>

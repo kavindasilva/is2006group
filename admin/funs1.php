@@ -70,7 +70,7 @@ function viewStudents() {
 		echo "<p>No students in the table</p>";
 	
 	else {
-		echo "<table id='tblstd'>";
+		echo "<table id='tblstd' border=1>";
 		echo "<tr> <th>ID</th>  <th>First name</th> <th>Last name</th> <th>Birthday</th> <th>class</th>";
 		echo " <th>sex</th> <th>Telephone</th> <th>Parent name</th> <th>Address</th></tr>";
 		
@@ -107,7 +107,7 @@ function viewTeachers() {
 		echo "<p>No teachers in the table</p>";
 	
 	else {
-		echo "<table id='tbltch'>";
+		echo "<table id='tbltch' border=1>";
 		echo "<tr> <TH>ID</th> <th>Full name</th> <th>Gender</th> <th>Qualifications</th> <th>email</th>";
 		echo "<th>telephone no</th> <th>subject</th> </tr>";
 		while ($row = mysqli_fetch_array($res)) {

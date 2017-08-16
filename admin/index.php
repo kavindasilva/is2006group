@@ -47,7 +47,7 @@ include_once 'funs1.php';
 		<div>
 			<?php
 			//include_once '../static/head1.php';		
-			include_once '../static/php/navibar.php';	
+			//include_once '../static/php/navibar.php';	
 			?>
 		</div>
 		
