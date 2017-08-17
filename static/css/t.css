@@ -1,0 +1,54 @@
+.container1{
+	border: 0;
+	margin-left: 100px;
+	width: 95%;
+	margin:auto;
+	border-radius: 30px;
+    background: #4bb8dd;
+	padding: 20px;
+	font-weight: bold;
+	color:white;
+}
+.container2{
+	border: 0;
+	margin-left: 100px;
+	width: 95%;
+	height: 60%;
+	margin:auto;
+	border-radius: 30px;
+    background: #4bb8dd;
+	padding: 20px;
+	font-weight: bold;
+	font-style: 
+	color:white;
+
+}
+.button{
+	display: block;
+	width: 300px;  
+	height: 50px;
+	border-radius: 5px;
+    text-align: center;
+ 	color: #FFF;
+    background: #001a33;   
+    font: bold 17px/50px Arial;
+    text-decoration: none;
+    text-transform: uppercase;
+
+}
+.button2{
+	position: relative;
+    left: 400px;
+    bottom: 70px;
+	display: block;
+	width: 300px;  
+	height: 50px;
+	border-radius: 5px;
+    text-align: center;
+ 	color: #FFF;
+    background: #001a33;   
+    font: bold 17px/50px Arial;
+    text-decoration: none;
+    text-transform: uppercase;
+
+}

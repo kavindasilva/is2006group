@@ -36,14 +36,14 @@ echo "</div>";
 <br>
 <div class="container2">
 <div class="button">
-<a href="">  View Syllubus </a>
+<a href="viewsyllubus.php">  View Syllubus </a>
 <br>
-<img src="../img/student.png" alt="student">
+<img src="../static/img/student.png" alt="student">
 </div>
 <div class="button2">
-<a href="">  View Subject </a>
+<a href="../static/php/lnotes.php">  View Subject </a>
 <br>
-<img src="../img/student2.png" alt="student">
+<img src="../static/img/student2.png" alt="student">
 </div>
 
 </div>

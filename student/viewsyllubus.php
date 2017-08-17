@@ -14,7 +14,7 @@
 </head>
 <body>
 <div class="bordered">
-<center><img src="../img/syllabus.png" alt="syallubus" style="width:300px;height:300px; "></center>
+<center><img src="../static/img/syllabus.png" alt="syallubus" style="width:300px;height:300px; "></center>
 <div class="rte"><p><strong>To get a copy of syllabus for Methodist College, please click on the link below:</strong></p>
 <ul>
 <li><a href="http://nie.lk/pdffiles/tg/s1tim171.pdf">Grade 1</a></li>

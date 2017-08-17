@@ -29,13 +29,21 @@ echo "</div>";
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="Styles.css">
-	
+	<link rel="stylesheet" type="text/css" href="../static/css/Styles.css">
+	<style>
+	.bordered {
+    height: 1200px;
+    padding: 20px;
+    border: 10px groove #00b38f;
+  	}
+
+	</style>
 	<title> Teachers' Registration Form </title>
 </head>
 
 <body>
-	
+	<script type="text/javascript" src="../js/adminFun.js"></script>
+	<div class="bordered">
 	<form action="funs2.php" method="post">
 	
 	<table border="0" width="50%" align="center">
@@ -121,5 +129,6 @@ echo "</div>";
 </table>
 </form>
 
+</div>
 </body>
 </html>
