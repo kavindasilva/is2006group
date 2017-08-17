@@ -13,15 +13,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	//check user type
 	$usertype = strtolower(substr($user, 0, 3)); //echo $usertype."--"; echo substr($user, 3);
 	if ($usertype == 'std'){
-		$table = "student";
+		//$table = "student";
 		$sql = "select * from student where sid=".substr($user,3) . ";";
 	}
 	elseif ($usertype == 'tch'){
-		$table = "teacher";
+		//$table = "teacher";
 		$sql = "select * from teacher where tid=".substr($user,3) . ";";
 	}
 	elseif ($usertype == "adm"){
-		$table = "admin";
+		//$table = "admin";
 		$sql = "select * from admins where id=".substr($user,3) . ";";
 	}
 	else {

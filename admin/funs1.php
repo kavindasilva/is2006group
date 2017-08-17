@@ -2,6 +2,7 @@
 //this file has functions only
 /* delete student
  * delete teacher
+ reset passwords
  * view students
  * view teachers
  */

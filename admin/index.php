@@ -59,7 +59,7 @@ include_once 'funs1.php';
 					Filter students by keyword:
 					<input type="button" onclick="clearAllStd()" value="clear search"/>
 					
-					<!--tharikage student form ekata link karanna oni-->
+					
 					<a href="regstudent.php"><input value="Add New Student" type="button"></a>
 					
 					<br>
@@ -88,7 +88,7 @@ include_once 'funs1.php';
 					Filter teachers by keyword:
 					<input type="button" onclick="clearAllTch()" value="clear search"/>
 					
-					<!--tharikage teacher form ekata link karanna oni-->
+					
 					<a href="regteacher.php"><input value="Add New Teacher" type="button"></a>
 					<br>
 					
@@ -109,25 +109,7 @@ include_once 'funs1.php';
 				viewTeachers();
 				?>
 			</div>
-			
-			<!--subjects list-->
-			<P>
-				<!--form action="subjects.php" method="post">
-					Filter subjectss by name:
-					<input type="button" onclick="clearAllTch()" value="clear search"/>
-					
-					<a href="subjects.php"><input value="Add New Subject" type="button"></a>
-					<br>
-					
-					<input type="text" name="skey" id="search21" onkeyup="searchRows(1,this.id, 'tblsub');" placeholder="subject name" />
-
-					<input type="text" name="skey" hidden/>
-					<input type="text" name="stype" value="tt" hidden />
-					<input type="submit" name="subsearch" value="search" hidden/>
-
-				</form-->
-			</P>
-			
+		
 			
 			<div class="subject">
 				<?php //include 'funs1.php';
