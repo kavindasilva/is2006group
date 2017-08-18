@@ -1,3 +1,18 @@
+<?php
+echo "<div style='float:right; align:left'>";
+session_start();
+if ( (!isset($_SESSION['user'])) || ($_SESSION['usertype']!='tch') ){
+	header("Location: ../../index.php");
+	exit();
+}
+if(isset($_SESSION['user'])){
+	echo "Hi, ".$_SESSION['user'].", ";
+	echo "<form method='get' action='../../logout.php'>";
+	echo "<input type='submit' value='logout'>";
+	echo "</form>";
+}
+echo "</div>";
+?>
 <html>
 
 <head>
